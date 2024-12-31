@@ -5,7 +5,7 @@
  * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
  *
  * =========================================================================== */
- 
+
 /* -----------------------------------------------------------------------------
  * Keyframes
  * -------------------------------------------------------------------------- */
@@ -37,44 +37,39 @@ nord15 #b48ead
 /* -----------------------------------------------------------------------------
  * Base styles
  * -------------------------------------------------------------------------- */
- 
+
 /* Reset all styles */
 
 * {
     color: #eceff4;
-    border: 0;
-    border-radius: 0;
-    padding: 0 0;
-    font-family:Symbols Nerd Font Mono;
-    font-size: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-bottom:2px;
-   }
-
-window#waybar {
-    background:rgba(0, 0, 0, 0.5);
-    border-radius: 20px 20px 20px 20px; 
+    font-family: Symbols Nerd Font Mono;
+    font-size: 16px;
+    margin-right: 2px;
+    margin-left: 2px;
+    /* padding-bottom: 2px; */
+    min-height: 0;
+    font-weight: bold;
 }
 
-#workspaces button {
-    /* padding: 2px 0px; */
-    border-bottom: 1px;
-    color: #77797a;
-    /* color: #000000; */
-    border-color: #000000;
-    border-style: solid;
-    margin-top:5px;
+window#waybar {
+    /* border-radius: 20px 20px 20px 20px; */
+    background: transparent;
+    /* background-color: #11111b; */
+    /* color: #a6adc8; */
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    /* border-bottom: 1px solid #7f849c; */
+}
+
+#workspaces {
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
 }
 
 #workspaces button.active {
-    color: #81a1c1;
-    border-color: #77797a;
+    border-top: 2px solid #cba6f7;
 }
 
-#cpu {
-    margin-top: 7px; /* Shifts the CPU module 2px down */
-}
 
 /* -----------------------------------------------------------------------------
  * Module styles
@@ -82,7 +77,10 @@ window#waybar {
 
 
 #clock {
- color:#a3be8c;
+    color: #a3be8c;
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 10px 0px 10px;
 }
 
 #backlight {
@@ -90,12 +88,21 @@ window#waybar {
 }
 
 #battery {
-    color: #d8dee9;
+    color: #a3be8c;
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 10px 0px 10px;
 }
 
 #battery.charging {
     color: #81a1c1;
 }
+
+#battery.plugged {
+    color: #81a1c1;
+}
+
+
 
 @keyframes blink {
     to {
@@ -115,19 +122,27 @@ window#waybar {
 }
 
 #cpu {
-    color:#a3be8c ;
+    color: #a3be8c;
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px 10px 0px 10px;
+    margin: 0;
+
 }
 
 #memory {
     color: #d3869b;
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 10px 0px 10px;
 }
 
 #network.disabled {
-    color:#bf616a;
+    color: #bf616a;
 }
 
-#network{
-    color:#a3be8c;
+#network {
+    color: #a3be8c;
 }
 
 #network.disconnected {
@@ -136,6 +151,9 @@ window#waybar {
 
 #pulseaudio {
     color: #b48ead;
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 10px 0px 10px;
 }
 
 #pulseaudio.muted {
@@ -144,42 +162,48 @@ window#waybar {
 
 #temperature {
     color: #8fbcbb;
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 10px 0px 10px;
 }
 
 #temperature.critical {
     color: #bf616a;
+
 }
 
 #idle_inhibitor {
-   color: #ebcb8b;
+    color: #ebcb8b;
 }
 
 #tray {
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 10px 0px 10px;
 }
 
-#custom-launcher{
-        font-size: 20px;
-        background-image: url('/home/shadow/.config/waybar/launcher.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        border-style: hidden;
+
+#window {
+    margin: 8px;
+    padding-left: 8;
+    padding-right: 8;
 }
 
-#custom-power{
+#custom-power {
+    background-color: #000000;
+    border-radius: 10px 10px 10px 10px;
     border-style: hidden;
-    margin-top:2px;    
+    /* margin-top: 2px;
+    margin-left: 4px;
+    margin-right: 4px; */
+    padding: 2px 12px 0px 12px;
+    color: #bf616a;
 }
 
-#window{
-    border-style: hidden;
-    margin-top:1px;  
-}    
-#custom-keyboard-layout{
-   color:#d08770;
-}   
-#custom-network_traffic{
-   color:#d08770;
+#custom-keyboard-layout {
+    color: #d08770;
 }
 
-
+#custom-network_traffic {
+    color: #d08770;
+}

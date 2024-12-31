@@ -1,3 +1,6 @@
+set -x LANG en_IN.UTF-8
+set -x LC_ALL en_IN.UTF-8
+
 ## Set values
 # Hide welcome message & ensure we are reporting fish as shell
 set fish_greeting
