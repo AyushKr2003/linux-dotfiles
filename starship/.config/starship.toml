@@ -1,46 +1,86 @@
+palette = "catppuccin_mocha"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
 ## FIRST LINE/ROW: Info & Status
-# First param ─┌
 [username]
-format = " [╭─$user]($style)@"
+format = " [$user]($style)@"
 show_always = true
 style_root = "bold red"
-style_user = "bold red"
+style_user = "bold mauve"
 
-# Second param
 [hostname]
 disabled = false
 format = "[$hostname]($style) in "
 ssh_only = false
-style = "bold dimmed red"
-trim_at = "-"
+style = "bold maroon"
+ssh_symbol = " "
 
-# Third param
 [directory]
-style = "purple"
+style = "bold peach"
 truncate_to_repo = true
 truncation_length = 0
 truncation_symbol = "repo: "
+read_only = ""
 
-# Fourth param
+[git_metrics]
+disabled = false
+added_style = 'bold green'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
 [sudo]
 disabled = false
 
-# Before all the version info (python, nodejs, php, etc.)
 [git_status]
-ahead = "⇡${count}"
-behind = "⇣${count}"
+ahead = "${count}"
+behind = "${count}"
 deleted = "x"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-style = "white"
+diverged = "${ahead_count}${behind_count}"
+style = "text"
 
-# Last param in the first line/row
+[git_branch]
+symbol = " "
+style = "bold green"
+
+[nix_shell]
+format = 'via [$symbol(($name))]($style) '
+symbol = " "
+
 [cmd_duration]
 disabled = false
+style="bold flamingo"
 format = "took [$duration]($style)"
-min_time = 1
+show_milliseconds = true
+show_notifications = true
+min_time_to_notify = 30_000
 
 ## SECOND LINE/ROW: Prompt
-# Somethere at the beginning
 [battery]
 charging_symbol = ""
 disabled = true
@@ -52,59 +92,51 @@ disabled = false
 style = "bold red"
 threshold = 15
 
-[[battery.display]] # "bold yellow" style when capacity is between 15% and 50%
+[[battery.display]] # "bold peach" style when capacity is between 15% and 50%
 disabled = true
-style = "bold yellow"
+style = "bold peach"
 threshold = 50
 
-[[battery.display]] # "bold green" style when capacity is between 50% and 80%
+[[battery.display]] # "bold green" style when capacity is between 50% and 90%
 disabled = true
 style = "bold green"
-threshold = 80
+threshold = 90
 
-# Prompt: optional param 1
-[time]
-disabled = true
-format = " 🕙 $time($style)\n"
-style = "bright-white"
-time_format = "%T"
-
-# Prompt: param 2
-[character]
-error_symbol = " [×](bold red)"
-success_symbol = " [╰─λ](bold red)"
-
-# SYMBOLS
 [status]
 disabled = false
 format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
 map_symbol = true
 pipestatus = true
-symbol = "🔴"
+symbol = "✖"
+not_executable_symbol = ""
+not_found_symbol = ""
+sigint_symbol = "󰟾"
+signal_symbol = ""
 
-[aws]
-symbol = " "
+[os]
+disabled = false
+format = ' [$symbol]($style)'
+style = "bold mauve"
 
-[conda]
-symbol = " "
+[character]
+error_symbol = ""
+success_symbol = "❯(bold green)"
 
-[dart]
-symbol = " "
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[git_branch]
-symbol = " "
+# SYMBOLS
+[git_commit]
+tag_symbol = '  '
 
 [golang]
 symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
 
 [hg_branch]
 symbol = " "
@@ -115,32 +147,104 @@ symbol = " "
 [julia]
 symbol = " "
 
-[nim]
-symbol = " "
+[kotlin]
+symbol = " "
 
-[nix_shell]
-symbol = " "
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
 
 [nodejs]
-symbol = " "
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
 
 [package]
-symbol = " "
+symbol = "󰏗 "
 
 [perl]
-symbol = " "
+symbol = " "
 
 [php]
 symbol = " "
 
+[pijul_channel]
+symbol = " "
+
 [python]
-symbol = " "
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
 
 [ruby]
-symbol = " "
+symbol = " "
 
 [rust]
-symbol = " "
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
 
 [swift]
-symbol = "ﯣ "
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "

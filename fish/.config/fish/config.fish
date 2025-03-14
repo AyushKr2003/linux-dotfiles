@@ -172,6 +172,7 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 # if status --is-interactive && type -q fastfetch
 #    fastfetch --config neofetch.jsonc
 # end
+set -Ux FASTFETCH_CONFIG_FILE "$HOME/.config/fastfetch/mokka.jsonc"
 
 set -Ux CHROME_EXECUTABLE /usr/bin/google-chrome-stable
 

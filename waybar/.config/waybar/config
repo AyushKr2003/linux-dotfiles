@@ -170,6 +170,7 @@
 // 	    "on-click": "yad --html --uri='https://wttr.in/Essen' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
 //         },
 //     }
+//--------------------------------------------------------------------------
 /* ---- 💫 Custom Waybar Configuration 💫 ---- */
 /* ---- 💫 Custom Waybar Configuration 💫 ---- */
 {
@@ -180,93 +181,64 @@
   "margin": "4 1 0 1", // top right bottom left
   "spacing": 3,
   "fixed-center": true,
-  /* Modules Configuration */
   "modules-left": [
-    // "custom/launcher",
     "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
+    "custom/weather",
     "clock"
-    // "bluetooth",
-    // "network"
-    // "custom/keyboard-layout"
   ],
   "modules-right": [
-    "temperature",
-    "cpu",
-    "memory",
     "pulseaudio",
-    // "network",
-    // "custom/network_traffic",
     "tray",
     "battery",
     "custom/power"
   ],
-  /* Module Settings */
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
-    "all-outputs": true,
-    "sort-by-number": true,
     "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "focused": "",
-      "default": ""
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
+    "tooltip": false,
   },
   "hyprland/window": {
-    "format": "{}",
-    "icon": true,
-    "max-length": 10,
+    "format": "{class}",
+    "separate-outputs": false,
   },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
+  "custom/weather": {
+    "format": "{}",
+    "interval": 10,
+    "exec": "~/.config/waybar/weather.sh",
+    "tooltip": false
   },
   "clock": {
-    "format": " {:%a %d %b - %I:%M %p}", // 12 hour format
-    "interval": 1,
-    "on-click": "~/.config/waybar/scripts/OCV"
-  },
-  "cpu": {
-    "format": "🖳 {usage}%",
-    "on-click": "foot -e htop"
-  },
-  "memory": {
-    "format": "🖴 {: >3}%",
-    "on-click": "foot -e htop"
-  },
-  "temperature": {
-    "thermal-zone": 7, // Check with: # cat /sys/class/hwmon/hwmon*/temp1_input
-    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-    "critical-threshold": 80,
-    "format-critical": " {temperatureC}°C",
-    "format": " {temperatureC}°C"
-  },
-  "backlight": {
-    "format": "{icon} {percent: >3}%",
-    "format-icons": [
-      "",
-      ""
-    ],
-    "on-scroll-down": "brightnessctl -c backlight set 1%-",
-    "on-scroll-up": "brightnessctl -c backlight set +1%",
-    "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
+    "format": "<span color='#fab387'></span> {:%H:%M}",
+    "tooltip-format": "<big><span color='#cdd6f4'>{:%Y %B}</span></big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "<span color='#eba0ac'></span> <span color='#cdd6f4'>{:%Y-%m-%d}</span>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#cdd6f4'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'><b>{}</b></span>",
+        "weeks": "<span color='#f5c2e7'><b>W{}</b></span>",
+        "weekdays": "<span color='#f5c2e7'><b>{}</b></span>",
+        "today": "<span color='#eba0ac'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
   "battery": {
     "states": {
@@ -286,63 +258,19 @@
     "format-discharging": "{icon}{capacity: >3}%",
     "format-plugged": "⚡{capacity: >3}%"
   },
-  "custom/updates": {
-    "format": "{} {icon}",
-    "return-type": "json",
-    "format-icons": {
-      "has-updates": "󱍷",
-      "updated": "󰂪"
-    },
-    "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates",
-    "on-click": "foot -e update"
-  },
   "custom/power": {
     "format": "⏻",
     "on-click": "nwgbar",
     "tooltip": false
   },
-  "custom/keyboard-layout": {
-    "format": "|   ",
-    "on-click": "~/.config/waybar/scripts/keyhint.sh"
-  },
   "tray": {
     "spacing": 5,
     "icon-size": 22
   },
-  "bluetooth": {
-    "format": " 󰂯 ",
-    "tooltip": true,
-    "tooltip-format": "Bluetooth",
-    "on-click": "bluetoothctl"
-  },
-  "network": {
-    "format": "⚠Disabled",
-    "format-wifi": "",
-    "format-ethernet": "",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "⚠Disabled",
-    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-    "on-click": "nm-applet"
-  },
   "pulseaudio": {
-    "scroll-step": 3, // %, can be a float
-    "format": "{icon} {volume}% {format_source}100%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-source": "",
-    "format-source-muted": "",
+    "scroll-step": 5,
+    "format": "<span color='#fab387'>{icon}</span> {volume}%",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
       "default": [
         "",
         "",
@@ -350,6 +278,6 @@
       ]
     },
     "on-click": "pavucontrol",
-    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    "tooltip": false
   }
 }
