@@ -82,6 +82,32 @@ button:hover {
     color: @yellow;
 }
 
+#cpu {
+    padding: 2px 15px;
+    margin: 5px;
+    color: @fg;
+    background-color: @bg2;
+    border: none;
+    border-radius: 20px;
+}
+
+#cpu:hover {
+    color: @yellow;
+}
+
+#memory {
+    padding: 2px 15px;
+    margin: 5px;
+    color: @fg;
+    background-color: @bg2;
+    border: none;
+    border-radius: 20px;
+}
+
+#memory:hover {
+    color: @yellow;
+}
+
 #pulseaudio {
     padding: 2px 15px;
     margin: 5px;

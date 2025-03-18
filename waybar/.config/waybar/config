@@ -190,6 +190,8 @@
     "clock"
   ],
   "modules-right": [
+    "cpu",
+    "memory",
     "pulseaudio",
     "tray",
     "battery",
@@ -246,7 +248,7 @@
       "critical": 15
     },
     "interval": 30,
-    "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>   {capacity}% ",
+    "format": "<span font='Font Awesome 5 Free 11'>{icon}</span> {capacity}% ",
     "format-icons": [
       "",
       "",
@@ -254,9 +256,9 @@
       "",
       ""
     ],
-    "format-charging": "⚡{capacity: >3}%",
+    "format-charging": "⚡ {capacity: >3}%",
     "format-discharging": "{icon}{capacity: >3}%",
-    "format-plugged": "⚡{capacity: >3}%"
+    "format-plugged": "⚡ {capacity: >3}%"
   },
   "custom/power": {
     "format": "⏻",
@@ -265,7 +267,11 @@
   },
   "tray": {
     "spacing": 5,
-    "icon-size": 22
+    "icon-size": 22,
+    "always-show": [
+      "bluetooth",
+      "network"
+    ]
   },
   "pulseaudio": {
     "scroll-step": 5,
@@ -279,5 +285,13 @@
     },
     "on-click": "pavucontrol",
     "tooltip": false
-  }
+  },
+  "cpu": {
+    "format": "<span color='#fab387'>🖳</span> {usage}%",
+    "on-click": "foot -e htop"
+  },
+  "memory": {
+    "format": "<span color='#fab387'>🖴</span>{:>3}%",
+    "on-click": "foot -e htop"
+  },
 }
