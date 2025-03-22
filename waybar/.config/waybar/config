@@ -287,11 +287,11 @@
     "tooltip": false
   },
   "cpu": {
-    "format": "<span color='#fab387'>🖳</span> {usage}%",
+    "format": "<span color='#eba0ac'>🖳</span> {usage}%",
     "on-click": "foot -e htop"
   },
   "memory": {
-    "format": "<span color='#fab387'>🖴</span>{:>3}%",
+    "format": "<span color='#89b4fa'>🖴</span>{:>3}%",
     "on-click": "foot -e htop"
   },
 }

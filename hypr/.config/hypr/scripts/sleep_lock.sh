@@ -1,7 +1,7 @@
 #!/bin/sh
-swayidle -w \
-                timeout 160 'temp=$(brightnessctl g); brightnessctl set $((temp / 2))' \
-                    resume 'temp=$(brightnessctl g); brightnessctl set $((temp * 2))' \
-                timeout 120 "hyprlock & sleep 1 && hyprctl dispatch dpms off" \
-                    resume 'hyprctl dispatch dpms on' \
-                timeout 600 'systemctl suspend'
+# swayidle -w \
+#         timeout 10 "hyprlock" \  # Lock the screen after 10 seconds of inactivity
+#             resume '' \  
+#         timeout 120 'hyprctl dispatch dpms off' \  # Turn off the screen after 120 seconds
+#             resume 'hyprctl dispatch dpms on' \  # Turn on the screen when resumed
+#         timeout 600 'systemctl suspend'  # Suspend the system after 600 seconds
