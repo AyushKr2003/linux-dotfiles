@@ -181,3 +181,6 @@ fzf --fish | source
 
 
 fish_add_path -g -p ~/development/flutter/bin
+
+set -x GTK_THEME "Catppuccin-Dark-Macchiato"  # Set the GTK theme
+set -x GTK_CSD 0  # Optional: Enable client-side decorations
