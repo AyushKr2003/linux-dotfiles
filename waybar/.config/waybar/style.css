@@ -1,34 +1,34 @@
-@define-color bg #1e1e2e;
-@define-color bg2 #181825;
-@define-color fg #cdd6f4;
-@define-color pink #f5c2e7;
-@define-color green #a6e3a1;
-@define-color fl #f2cdcd;
-@define-color blue #89b4fa;
-@define-color red #eba0ac;
-@define-color vl #cba6f7;
-@define-color yellow #fab387;
-
+@import "mocha.css"; 
 
 * {
-    font-family: JetBrainsMono, Symbols Nerd Font;
+    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-size: 16px;
+    min-height: 0;
     font-weight: bold;
-    font-size: 17px;
-    min-height: 0px;
 }
 
 window#waybar {
     background: transparent;
+    background-color: @crust;
+    color: @overlay0;
     transition-property: background-color;
+    transition-duration: 0.1s;
+   /* border-bottom: 1px solid @overlay1;*/
 }
 
-#workspaces {
-    padding: 2px 15px;
-    margin: 5px;
-    color: @fg;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
+#window {
+    /* margin: 8px;
+    padding-left: 8;
+    padding-right: 8;*/
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
+ border-radius: 20px;
 }
 
 button {
@@ -39,136 +39,140 @@ button {
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px transparent;
+    color: @mauve;
+    border-top: 2px solid @mauve;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: @gf;
+    padding: 0 4px;
+border-radius: 20px;
 }
 
-#workspaces button:hover {
-    color: @yellow;
+#workspaces button.focused {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @rosewater;
+    border-top: 2px solid @rosewater;
 }
 
-#workspaces button.focused {}
+#workspaces button.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @mauve;
+    border-top: 2px solid @mauve;
+}
 
-#workspaces button.urgent {}
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
 
+#cpu,
+#memory,
+#disk {
+  margin:4px;
+  padding:2px;
+  font-size:16px; 
+  color: @overlay2;
+ border-bottom: 2px solid @overlay2;
+
+  border-radius: 20px;
+}
+
+
+
+#custom-weather,
+#tray,
+#pulseaudio,
+#clock,
+#battery,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#scratchpad {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 20px;
+}
 
 #clock {
-    padding: 2px 15px;
-    margin: 5px;
-    color: @yellow;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
+    color: @sapphire;
+    border-bottom: 2px solid @sapphire;
 }
 
-#clock:hover {
-    color: @yellow;
+#clock.date {
+    color: @sapphire;
+    border-bottom: 2px solid @sapphire;
 }
 
-#battery {
-    color: @fg;
-    background-color: @bg2;
-    border-radius: 20px;
-    padding: 2px 15px;
-    margin: 5px;
-}
-
-#battery:hover {
-    color: @yellow;
-}
-
-#cpu {
-    padding: 2px 15px;
-    margin: 5px;
-    color: @fg;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
-}
-
-#cpu:hover {
-    color: @yellow;
-}
-
-#memory {
-    padding: 2px 15px;
-    margin: 5px;
-    color: @fg;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
-}
-
-#memory:hover {
-    color: @yellow;
-}
 
 #pulseaudio {
-    padding: 2px 15px;
-    margin: 5px;
-    color: @fg;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
+    color: @blue;
+    border-bottom: 2px solid @blue;
 }
 
-#pulseaudio.muted {
+#tray{
+  border-bottom: 2px solid @subtext1;
+}
+
+#network {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
+}
+
+#idle_inhibitor {
+    margin-right: 12px;
+    color: #7cb342;
+}
+
+#idle_inhibitor.activated {
     color: @red;
 }
 
-#pulseaudio:hover {
-    color: @yellow;
+
+#battery {
+    color: @green;
+    border-bottom: 2px solid @green;
 }
 
-#tray {
-    padding: 2px 15px;
-    margin: 5px;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
 }
 
-
-#window {
-    padding: 2px 15px;
-    margin: 5px;
-    color: @fg;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
 }
 
-#window:hover {
-    color: @yellow;
-}
-
-#custom-power {
-    padding: 2px 15px;
-    margin: 5px;
-    color: @pink;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
+#custom-vpn {
+    color: @lavender;
+    border-radius: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 #custom-weather {
-    padding: 2px 15px;
-    margin: 5px;
-    color: @fg;
-    background-color: @bg2;
-    border: none;
-    border-radius: 20px;
+  color: @text;
+  border-bottom: 2px solid @text;
 }
 
-#custom-weather:hover {
-    color: @blue;
+#custom-exit {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  padding-right: 6px;
+
+  color: @red;
+  border-bottom: 2px solid @red;
+border-radius: 20px;
+
 }
 
-#custom-power:hover {
-    color: @red;
-}
+
