@@ -1,84 +1,111 @@
-# GRUB Theme
+# GRUB Theme - Catppuccin Mocha
 
-This is a custom GRUB theme designed to enhance the bootloader interface for your system. It provides a more personalized and visually appealing boot experience by modifying the default GRUB boot menu.
+A sleek, modern GRUB bootloader theme using the Catppuccin Mocha color palette. This theme enhances your system's boot experience with elegant styling and improved usability.
+
+<!-- ![Theme Preview](preview.png) -->
 
 ## Features
 
-- Custom background image
-- Custom fonts and colors
-- Stylish boot menu layout
+- **Catppuccin Mocha Color Scheme**: Utilizes the popular Catppuccin Mocha palette for a cohesive and modern look
+- **Clean Interface**: Minimalist design with clear navigation indicators
+- **Custom Welcome Screen**: Personalized greeting on boot
+- **Progress Bar**: Visual indication of boot timeout
+- **Intuitive Controls**: On-screen key bindings for easy navigation
 
 ## Installation
 
-To apply this GRUB theme, follow the instructions below:
+Follow these steps to install the Catppuccin Mocha GRUB theme:
 
-### 1. Copy the Theme
+### 1. Copy the Theme Files
 
-First, dcopy the theme files to a suitable directory on your system. For example, you can place them in `/boot/grub/themes/[your-theme-name]`.
+Copy the theme directory to your GRUB themes folder:
 
 ```bash
-sudo cp -r /path/to/your/my_theme_mocha /boot/grub/themes/
+sudo cp -r my_theme_mocha /boot/grub/themes/
 ```
 
 ### 2. Update GRUB Configuration
 
-Next, open the GRUB configuration file for editing:
+Edit your GRUB configuration file:
 
 ```bash
-sudo nvim /etc/default/grub
+sudo nano /etc/default/grub
 ```
 
-### 3. Modify GRUB Configuration
+### 3. Set the Theme Path
 
-In the `/etc/default/grub` file, set the following variables:
+Add or modify the following line in your GRUB configuration:
 
-- Set the theme path to your theme directory:
+```bash
+GRUB_THEME="/boot/grub/themes/my_theme_mocha/theme.txt"
+```
 
-  ```bash
-  GRUB_THEME="/boot/grub/themes/my_theme_mocha/theme.txt"
-  ```
+You may also want to adjust other settings like:
 
-- Optionally, configure any other GRUB settings to your preference (e.g., `GRUB_TIMEOUT`, `GRUB_HIDDEN_TIMEOUT`).
+```bash
+# Timeout in seconds
+GRUB_TIMEOUT=5
 
-### 4. Update GRUB
+# Uncomment to show the menu
+GRUB_TIMEOUT_STYLE=menu
+```
 
-Once you've modified the GRUB configuration, update GRUB to apply the changes:
+### 4. Apply Changes
 
-  ```bash
-  sudo grub-mkconfig -o /boot/grub/grub.cfg
-  ```
+Update your GRUB configuration:
 
-### 5. Reboot Your System
+```bash
+# For most Linux distributions
+sudo update-grub
 
-Reboot your system to see your custom GRUB theme in action:
+# For some distributions, use:
+# sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### 5. Reboot
+
+Restart your system to see the new theme:
 
 ```bash
 sudo reboot
 ```
 
-## Customizing the Theme
+## Customization
 
-You can easily customize the theme's appearance by modifying the following files:
+The theme can be easily customized to suit your preferences:
 
-- **Background Image**: Replace the background image in the theme folder with your own image.
-- **Fonts**: If you'd like to change the font, update the `font` setting in the `theme.txt` file.
-- **Colors**: Modify the color values in the `theme.txt` to change text, background, and other UI elements.
+### Background Image
 
-For more information on GRUB theme customization, refer to the [GRUB Theme Documentation](https://www.gnu.org/software/grub/manual/grub.html#Themes).
+Replace `background.png` in the theme folder with your preferred image. For best results, use an image that matches your screen resolution.
+
+### Fonts and Colors
+
+Edit `theme.txt` to change fonts and colors:
+
+- **Fonts**: The theme uses "DejaVu Sans" and "Terminus" fonts. You can modify font types and sizes.
+- **Colors**: The theme uses Catppuccin Mocha colors. You can adjust any color code to match your preference.
+
+Example of color customization in `theme.txt`:
+
+```
+# Change the welcome text color
+color = "#f5c2e7"  # Change to Catppuccin pink
+```
+
+### Menu Layout
+
+Adjust the menu position and size by modifying the `boot_menu` section in `theme.txt`.
 
 ## Troubleshooting
 
-- If you don't see the theme after updating GRUB, try running the following command to regenerate the GRUB configuration:
+- **Theme Not Appearing**: Ensure the path in `GRUB_THEME` is correct and that you've run `update-grub` or equivalent.
+- **Missing Fonts**: The theme requires DejaVu Sans and Terminus fonts. Install them if they're not available on your system.
+- **Broken Layout**: If the layout appears broken, check your screen resolution and adjust the theme accordingly.
 
-  ```bash
-  sudo grub-mkconfig -o /boot/grub/grub.cfg
-  ```
+## Credits
 
-- If you encounter any issues with fonts or backgrounds, make sure the file paths in your `theme.txt` are correct.
-
-## Contributing
-
-If you find any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request. Contributions are welcome!
+- [Catppuccin](https://github.com/catppuccin/catppuccin) - Color palette inspiration
+- [GRUB2 Theme Reference](https://www.gnu.org/software/grub/manual/grub/html_node/Theme-file-format.html) - Official documentation
 
 ## License
 
@@ -86,4 +113,4 @@ This theme is licensed under the [MIT License](LICENSE).
 
 ---
 
-**Ayush Kumar Singh**  
+Created by Ayush Kumar Singh

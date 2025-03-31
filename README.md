@@ -1,107 +1,185 @@
-# Dotfiles for Garuda Linux Hyprland
+# ✨ Arch Linux Hyprland Dotfiles
 
-This repository contains my personal dotfiles for configuring and customizing my Garuda Linux system running the [Hyprland](https://github.com/hyprwm/Hyprland) Wayland compositor. These configuration files are managed using [GNU Stow](https://www.gnu.org/software/stow/) for easy deployment and modular organization.
+<div align="center">
 
-## Features
+![Desktop Preview](./screenshots/preview.png)
 
-- Dotfiles designed specifically for **Garuda Linux** with **Hyprland**.
-- Configuration for:
-  - **Hyprland** (Wayland compositor)
-  - **Waybar** (status bar)
-  - **alacritty** (terminal emulator)
-  - **wpaperd** (background image manager)
-  - **neovim** (text editor)
-  - **fish** (shell)
-  - **zathura** (PDF viewer)
-  - **ranger** (file manager)
-  - **dunst** (notification daemon)
-  - **polybar** (optional, alternative status bar)
-  - And more...
-- Modular management with **GNU Stow** for simplicity and flexibility.
+*A modern, minimal Hyprland desktop environment with Catppuccin Mocha theme*
 
-## Prerequisites
+[![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)](https://archlinux.org/)
+[![Hyprland](https://img.shields.io/badge/Hyprland-8839ef?style=for-the-badge&logo=hyprland&logoColor=white)](https://hyprland.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/ayushkr2003/linux-dotfiles?style=for-the-badge)](https://github.com/ayushkr2003/linux-dotfiles/stargazers)
 
-1. Ensure **GNU Stow** is installed.  
-   Install it using your package manager:
-   ```bash
-   sudo pacman -S stow
-   ```
+</div>
 
-2. Install the necessary dependencies for each application. You can find specific instructions in each module's README or inside the respective config directories.
+> ⚠️ **WARNING**: While the individual dotfiles are safe to use and can be manually installed using GNU Stow, the automated installation scripts are currently EXPERIMENTAL and potentially DANGEROUS. These scripts may cause system instability or unexpected behavior. It is strongly recommended to review the scripts thoroughly before execution and proceed at your own risk. Manual installation using GNU Stow is the safer approach.
 
-   Example for **Hyprland** and **Waybar**:
-   ```bash
-   sudo pacman -S hyprland waybar
-   ```
+## 📋 Overview
 
-## Installation
+A carefully crafted collection of dotfiles for Arch-based Linux distributions featuring the Hyprland Wayland compositor. These configurations provide a seamless, productive, and visually appealing desktop environment.
 
-### Clone the repository
+### 🌟 Key Features
 
-Clone this repository to your system:
-```bash
-git clone https://github.com/your-username/garuda-hyprland-dotfiles.git
-cd garuda-hyprland-dotfiles
-```
+- **Universal Compatibility** - Works on any Arch-based distribution
+- **Hyprland Compositor** - Fast, feature-rich tiling Wayland compositor
+- **Catppuccin Theming** - Consistent Mocha color scheme across all applications
+- **Custom GRUB Theme** - Stylish boot experience with matching aesthetics
+- **Modular Configuration** - Easy to adopt partially or completely
 
-### Stow the configurations
+## 🖼️ Gallery
 
-To deploy the dotfiles, you can use **GNU Stow**. For example, to set up the configurations for **Hyprland**, run:
+<div align="center">
+<table>
+  <tr>
+    <td><img src="./screenshots/desktop.png" alt="Desktop" width="400"/></td>
+    <td><img src="./screenshots/terminal.png" alt="Terminal" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="./screenshots/neovim.png" alt="Neovim" width="400"/></td>
+    <td><img src="./screenshots/grub.png" alt="GRUB Theme" width="400"/></td>
+  </tr>
+</table>
+</div>
 
-```bash
-stow hyprland
-```
+## 🛠️ Components
 
-This will create symlinks to the correct locations. You can do this for all available configurations like so:
+| Category | Application | Description |
+|----------|-------------|-------------|
+| **Window Manager** | [Hyprland](https://hyprland.org/) | Dynamic tiling Wayland compositor |
+| **Status Bar** | [Waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar |
+| **Terminal** | [Alacritty](https://alacritty.org/), [Kitty](https://sw.kovidgoyal.net/kitty/) | GPU-accelerated terminal emulators |
+| **Shell** | [Fish](https://fishshell.com/) | User-friendly command line shell |
+| **Prompt** | [Starship](https://starship.rs/) | Minimal, blazing-fast shell prompt |
+| **Editor** | [Neovim](https://neovim.io/) | Hyperextensible Vim-based text editor |
+| **App Launcher** | [Wofi](https://hg.sr.ht/~scoopta/wofi) | Wayland native application launcher |
+| **Session Management** | [wlogout](https://github.com/ArtsyMacaw/wlogout) | Wayland logout menu |
+| **Screen Locking** | [hyprlock](https://github.com/hyprwm/hyprlock) | Hyprland-native screen locker |
+| **Boot Loader** | [GRUB](https://www.gnu.org/software/grub/) | With custom Catppuccin Mocha theme |
 
-```bash
-stow hyprland
-stow waybar
-stow alacritty
-stow neovim
-stow fish
-stow wpaperd
-# Add other stow commands for additional configurations
-```
+## 📦 Installation
 
-### Set up your environment
-
-After stowing the configurations, you can apply any necessary environment settings.
-
-1. **Wayland/Hyprland**: Ensure you're running the system under a Wayland session with **Hyprland**.
-2. **Terminal Emulator**: If you use **Alacritty**, set it as your default terminal:
-   ```bash
-   sudo update-alternatives --config x-terminal-emulator
-   ```
-3. **Neovim**: Install **Neovim** and any required plugins. You can use [vim-plug](https://github.com/junegunn/vim-plug) or any other plugin manager for this.
-
-### Set the wallpaper
-
-You can set your wallpaper with **wpaperd**. If it's included in your setup, run:
+### Prerequisites
 
 ```bash
-wpaperd --config ~/.config/wpappd/config.toml
+sudo pacman -S git stow
 ```
 
-Ensure that your wallpaper directory and configuration are correctly set up.
-
-## Customization
-
-You can customize your system further by modifying the configuration files for each application. The dotfiles are modular, so you can easily modify or remove any specific application without affecting others.
-
-For example, to modify the **Waybar** configuration:
+### Quick Setup
 
 ```bash
-stow waybar
-# Edit ~/.config/waybar/config to your preferences
+# Clone the repository
+git clone https://github.com/ayushkr2003/linux-dotfiles.git ~/.dotfiles
+
+# Navigate to the directory
+cd ~/.dotfiles
+
+# Install dependencies
+./custom-scripts/install-dependencies.sh
+
+# Deploy configurations (using GNU Stow)
+./custom-scripts/deploy.sh
 ```
 
-Similarly, you can edit the **neovim** or **fish** configurations by navigating to their respective configuration files under `~/.config/neovim` or `~/.config/fish`.
+## 🗂️ Directory Structure
 
-## Contributing
+```
+linux-dotfiles/
+├── alacritty/         # Alacritty terminal configuration
+├── custom-scripts/    # Utility and installation scripts
+├── fish/              # Fish shell configuration and functions
+├── grub_theme/        # Custom GRUB bootloader theme
+├── hypr/              # Hyprland window manager config
+├── hyprlock/          # Screen locking configuration
+├── kitty/             # Kitty terminal configuration
+├── nvim/              # Neovim text editor configuration
+├── starship/          # Starship prompt configuration
+├── waybar/            # Status bar configuration
+├── wlogout/           # Logout menu configuration
+├── wofi/              # Application launcher configuration
+└── README.md          # This documentation
+```
 
-Feel free to fork this repository and create a pull request if you'd like to contribute or improve upon the configurations.
+## ⌨️ Keyboard Shortcuts
 
-## License
+### Window Management
 
-This repository is licensed under the MIT License.
+| Shortcut | Action |
+|----------|--------|
+| `Super + Return` | Open terminal |
+| `Super + Q` | Close active window |
+| `Super + Space` | Toggle floating mode |
+| `Super + F` | Toggle fullscreen |
+| `Super + [1-9]` | Switch to workspace |
+| `Super + Shift + [1-9]` | Move window to workspace |
+
+### Applications
+
+| Shortcut | Action |
+|----------|--------|
+| `Super + D` | Launch Wofi (app launcher) |
+| `Super + L` | Lock screen with hyprlock |
+| `Super + Escape` | Open wlogout menu |
+| `Print` | Screenshot tool |
+
+## 🎨 Customization
+
+### Changing Theme Colors
+
+Edit the color variables in each application's configuration file to match your preferred color scheme.
+
+### Terminal Selection
+
+This configuration includes both Alacritty and Kitty terminals. You can set your preferred default:
+
+```bash
+# For Alacritty
+ln -sf ~/.config/alacritty/alacritty.yml ~/.config/hypr/terminal.conf
+
+# For Kitty
+ln -sf ~/.config/kitty/kitty.conf ~/.config/hypr/terminal.conf
+```
+
+### GRUB Theme Installation
+
+```bash
+# Navigate to GRUB theme directory
+cd ~/.dotfiles/grub_theme
+
+# Install the theme
+sudo ./install.sh
+```
+
+## 🔄 Updating
+
+To update your configurations with the latest changes:
+
+```bash
+cd ~/.dotfiles
+git pull
+./custom-scripts/deploy.sh
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to submit pull requests or open issues to improve these dotfiles.
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  
+### 🌟 If you find these dotfiles helpful, please consider giving a star! 🌟
+
+Created with ❤️ by [Ayush Kumar Singh](https://github.com/ayushkr2003)
+
+</div>
