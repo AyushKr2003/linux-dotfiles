@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Desktop Preview](./screenshots/preview.png)
+![Desktop Preview](./screenshots/hyprland.png)
 
 *A modern, minimal Hyprland desktop environment with Catppuccin Mocha theme*
 
@@ -32,7 +32,7 @@ A carefully crafted collection of dotfiles for Arch-based Linux distributions fe
 <div align="center">
 <table>
   <tr>
-    <td><img src="./screenshots/desktop.png" alt="Desktop" width="400"/></td>
+    <td><img src="./screenshots/hyprland.png" alt="Desktop" width="400"/></td>
     <td><img src="./screenshots/terminal.png" alt="Terminal" width="400"/></td>
   </tr>
   <tr>

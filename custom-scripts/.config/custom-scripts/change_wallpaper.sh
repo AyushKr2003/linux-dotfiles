@@ -24,7 +24,7 @@ random_wallpaper="${wallpapers[RANDOM % ${#wallpapers[@]}]}"
 echo ":: Setting wallpaper: $random_wallpaper"
 
 # Use swww to set the wallpaper
-swww img "$random_wallpaper"
+swww img "$random_wallpaper" --transition-type random
 
 # Path for the temporary copy and final image (blurred and possibly converted to PNG)
 temp_image="/tmp/temp_wallpaper.jpg"                 # Temp location for the copy
