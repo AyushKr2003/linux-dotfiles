@@ -119,7 +119,7 @@ linux-dotfiles/
 |----------|--------|
 | `Super + D` | Launch Wofi (app launcher) |
 | `Super + L` | Lock screen with hyprlock |
-| `Super + Escape` | Open wlogout menu |
+| `Super + SHIFT + E` | Open wlogout menu |
 | `Print` | Screenshot tool |
 
 ## 🎨 Customization
