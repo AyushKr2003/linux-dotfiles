@@ -1,13 +1,29 @@
 {
   "position": "top",
-  "modules-left": ["custom/launcher", "hyprland/workspaces","hyprland/window"],
-  "modules-center": ["clock", "custom/weather" ],
-  "modules-right": ["tray", "pulseaudio", "battery", "cpu", "memory", "disk","custom/exit"],
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/weather"
+  ],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "battery",
+    "custom/shortcuts",
+    "cpu",
+    "memory",
+    "disk",
+    "custom/exit"
+  ],
   "clock": {
     "format": "<span foreground='#74c7ec'>   </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  "hyprland/window":{
+  "hyprland/window": {
     "format": "{}",
   },
   "battery": {
@@ -22,7 +38,13 @@
     "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
     "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "tooltip-format": "{time}"
   },
   "network": {
@@ -33,12 +55,16 @@
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
   },
   "pulseaudio": {
-      "format": "{icon}  {volume}%",
-      "format-muted": "",
-      "format-icons": {
-          "default": ["", "", " "]
-      },
-      "on-click": "pavucontrol"
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        " "
+      ]
+    },
+    "on-click": "pavucontrol"
   },
   "tray": {
     "icon-size": 20,
@@ -48,18 +74,16 @@
       "bluetooth"
     ]
   },
-    // CPU
+  // CPU
   "cpu": {
     "format": " C {usage}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
-
   // Memory
   "memory": {
     "format": " M {}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
-
   // Harddisc space used
   "disk": {
     "interval": 30,
@@ -67,7 +91,6 @@
     "path": "/",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
-
   //custom icon
   "custom/weather": {
     "format": "{}",
@@ -82,14 +105,13 @@
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
   },
   "custom/launcher": {
-    "format":"    ",
+    "format": "    ",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "tooltip": false
   },
   "custom/shortcuts": {
-        "format": "󰌌",
-        "tooltip": "Show keyboard shortcuts",
-        "on-click": "~/.config/custom-scripts/show-shortcuts.sh",
-        "on-click-right": "~/.config/custom-scripts/show-shortcuts.sh"
-    }
+    "format": "   ",
+    "tooltip-format": "  Keybinds",
+    "on-click": "~/.config/custom-scripts/show-shortcuts.sh",
+  }
 }

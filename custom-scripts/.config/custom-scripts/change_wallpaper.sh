@@ -43,7 +43,7 @@ else
   # If the image is already png or another format, just use the temp image as output
   cp "$temp_image" "$output_image"
 fi
-
+cp "$output_image" "$wallpaper_folder/current/current_wall.png"
 # Apply a blur to the image (on the temporary copy)
 echo ":: Applying blur to the image..."
 convert "$output_image" -blur 0x8 "$output_image" # You can adjust the blur value (0x8) as needed

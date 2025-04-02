@@ -1,4 +1,5 @@
 set fish_greeting
+set -x EDITOR nvim
 
 if status is-interactive
     source ("/usr/bin/starship" init fish --print-full-init | psub)
@@ -44,4 +45,6 @@ alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
 alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
-alias fastfetch 'fastfetch -c ~/.config/fastfetch/mokka.jsonc'
+alias fastfetch 'fastfetch -c ~/.config/fastfetch/small-box.jsonc'
+alias vi nvim
+alias yay paru

@@ -1,4 +1,4 @@
-@import "mocha.css"; 
+@import "mocha.css";
 
 * {
     font-family: "MesloLGS Nerd Font Mono Bold";
@@ -9,11 +9,12 @@
 
 window#waybar {
     background: transparent;
-    background-color: transparent;/*@crust*/
+    background-color: transparent;
+    /*@crust*/
     color: @overlay0;
     transition-property: background-color;
     transition-duration: 0.1s;
-   /* border-bottom: 1px solid @overlay1;*/
+    /* border-bottom: 1px solid @overlay1;*/
 }
 
 #window {
@@ -26,9 +27,9 @@ window#waybar {
     margin-right: 4px;
     padding-left: 4px;
     padding-right: 4px;
-    color: @mauve;
-    border-bottom: 2px solid @mauve;
- border-radius: 20px;
+    color: @rosewater;
+    border-bottom: 2px solid @rosewater;
+    border-radius: 20px;
 }
 
 button {
@@ -45,7 +46,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 4px;
-border-radius: 20px;
+    border-radius: 20px;
 }
 
 #workspaces button.focused {
@@ -67,16 +68,15 @@ border-radius: 20px;
 #cpu,
 #memory,
 #disk {
-  margin:4px;
-  padding:2px;
-  font-size:16px; 
-  color: @overlay2;
- border-bottom: 2px solid @overlay2;
-
-  border-radius: 20px;
+    margin: 4px;
+    padding: 2px;
+    font-size: 16px;
+    color: @overlay2;
+    border-bottom: 2px solid @overlay2;
+    border-radius: 20px;
 }
 
-
+#custom-shortcuts,
 #custom-launcher,
 #custom-weather,
 #tray,
@@ -90,13 +90,13 @@ border-radius: 20px;
 #network,
 #mode,
 #scratchpad {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
-  border-radius: 20px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 20px;
 }
 
 #clock {
@@ -115,8 +115,8 @@ border-radius: 20px;
     border-bottom: 2px solid @blue;
 }
 
-#tray{
-  border-bottom: 2px solid @subtext1;
+#tray {
+    border-bottom: 2px solid @subtext1;
 }
 
 #network {
@@ -157,35 +157,34 @@ border-radius: 20px;
 }
 
 #custom-weather {
-  color: @text;
-  border-bottom: 2px solid @text;
+    color: @text;
+    border-bottom: 2px solid @text;
 }
 
 #custom-exit {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 4px;
+    padding-right: 6px;
 
-  color: @red;
-  border-bottom: 2px solid @red;
-  border-radius: 20px;
+    color: @red;
+    border-bottom: 2px solid @red;
+    border-radius: 20px;
 
 }
 
 #custom-launcher {
-  font-size: 20px;
-  background-image: url("/home/shadow/.config/waybar/fastfetch_arch_icon.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border-style: hidden;
+    font-size: 20px;
+    background-image: url("/home/shadow/.config/waybar/fastfetch_arch_icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-style: hidden;
 }
 
 #custom-shortcuts {
-    color: @mauve;
-    padding: 0 10px;
-    font-size: 16px;
+    color: @flamingo;
+    border-bottom: 2px solid @flamingo;
 }
