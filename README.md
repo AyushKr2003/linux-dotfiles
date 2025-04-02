@@ -53,6 +53,7 @@ A carefully crafted collection of dotfiles for Arch-based Linux distributions fe
 | **Prompt** | [Starship](https://starship.rs/) | Minimal, blazing-fast shell prompt |
 | **Editor** | [Neovim](https://neovim.io/) | Hyperextensible Vim-based text editor |
 | **App Launcher** | [Wofi](https://hg.sr.ht/~scoopta/wofi) | Wayland native application launcher |
+| **App Grid** | [nwg-drawer](https://github.com/nwg-piotr/nwg-drawer) | GTK-based application grid for Wayland |
 | **Session Management** | [wlogout](https://github.com/ArtsyMacaw/wlogout) | Wayland logout menu |
 | **Screen Locking** | [hyprlock](https://github.com/hyprwm/hyprlock) | Hyprland-native screen locker |
 | **Boot Loader** | [GRUB](https://www.gnu.org/software/grub/) | With custom Catppuccin Mocha theme |
@@ -108,19 +109,52 @@ linux-dotfiles/
 |----------|--------|
 | `Super + Return` | Open terminal |
 | `Super + Q` | Close active window |
-| `Super + Space` | Toggle floating mode |
+| `Super + Shift + Q` | Force quit active window |
 | `Super + F` | Toggle fullscreen |
+| `Super + Shift + F` | Toggle floating mode |
+| `Super + Shift + T` | Toggle all windows to floating mode |
+| `Super + P` | Toggle pseudo tiling |
+| `Super + J` | Toggle split direction |
 | `Super + [1-9]` | Switch to workspace |
 | `Super + Shift + [1-9]` | Move window to workspace |
+| `Super + S` | Toggle scratchpad |
+| `Super + Shift + S` | Move window to scratchpad |
+
+### Window Movement and Resizing
+
+| Shortcut | Action |
+|----------|--------|
+| `Super + Arrow Keys` | Focus window in direction |
+| `Super + Alt + Arrow Keys` | Swap window in direction |
+| `Super + Shift + Arrow Keys` | Resize active window |
+| `Super + Mouse Drag` | Move window |
+| `Super + Right Mouse Drag` | Resize window |
+| `Alt + Tab` | Cycle through windows |
 
 ### Applications
 
 | Shortcut | Action |
 |----------|--------|
 | `Super + D` | Launch Wofi (app launcher) |
+| `Super + Shift + D` | Launch nwg-drawer (app grid) |
+| `Super + N` | Open file manager |
+| `Super + O` | Launch Brave browser |
+| `Super + Z` | Launch Zen browser |
+| `Super + T` | Open floating terminal with system info |
+| `Super + V` | Open clipboard manager |
 | `Super + L` | Lock screen with hyprlock |
-| `Super + SHIFT + E` | Open wlogout menu |
-| `Print` | Screenshot tool |
+| `Super + Shift + E` | Open wlogout menu |
+| `Print` | Screenshot selected area |
+
+### System Controls
+
+| Shortcut | Action |
+|----------|--------|
+| `Super + C` | Change wallpaper |
+| `Super + M` | Exit Hyprland |
+| `Volume Keys` | Adjust volume |
+| `Brightness Keys` | Adjust screen brightness |
+| `Media Keys` | Control media playback |
 
 ## 🎨 Customization
 

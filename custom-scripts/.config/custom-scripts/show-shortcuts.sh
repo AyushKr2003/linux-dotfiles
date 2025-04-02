@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Show keyboard shortcuts using yad
+yad --title="Keyboard Shortcuts" \
+    --width=800 \
+    --height=600 \
+    --center \
+    --text="<b>Hyprland Keyboard Shortcuts</b>" \
+    --text-align=center \
+    --notebook \
+    --tab="Window Management" \
+    --tab="Window Movement" \
+    --tab="Applications" \
+    --tab="System Controls" \
+    --form \
+    --columns=2 \
+    --field="<b>Window Management</b>":LBL "" \
+    --field="Super + Return":RO "Open terminal" \
+    --field="Super + Q":RO "Close active window" \
+    --field="Super + Shift + Q":RO "Force quit active window" \
+    --field="Super + F":RO "Toggle fullscreen" \
+    --field="Super + Shift + F":RO "Toggle floating mode" \
+    --field="Super + Shift + T":RO "Toggle all windows to floating mode" \
+    --field="Super + P":RO "Toggle pseudo tiling" \
+    --field="Super + J":RO "Toggle split direction" \
+    --field="Super + [1-9]":RO "Switch to workspace" \
+    --field="Super + Shift + [1-9]":RO "Move window to workspace" \
+    --field="Super + S":RO "Toggle scratchpad" \
+    --field="Super + Shift + S":RO "Move window to scratchpad" \
+    --field="<b>Window Movement</b>":LBL "" \
+    --field="Super + Arrow Keys":RO "Focus window in direction" \
+    --field="Super + Alt + Arrow Keys":RO "Swap window in direction" \
+    --field="Super + Shift + Arrow Keys":RO "Resize active window" \
+    --field="Super + Mouse Drag":RO "Move window" \
+    --field="Super + Right Mouse Drag":RO "Resize window" \
+    --field="Alt + Tab":RO "Cycle through windows" \
+    --field="<b>Applications</b>":LBL "" \
+    --field="Super + D":RO "Launch Wofi (app launcher)" \
+    --field="Super + Shift + D":RO "Launch nwg-drawer (app grid)" \
+    --field="Super + N":RO "Open file manager" \
+    --field="Super + O":RO "Launch Brave browser" \
+    --field="Super + Z":RO "Launch Zen browser" \
+    --field="Super + T":RO "Open floating terminal with system info" \
+    --field="Super + V":RO "Open clipboard manager" \
+    --field="Super + L":RO "Lock screen with hyprlock" \
+    --field="Super + Shift + E":RO "Open wlogout menu" \
+    --field="Print":RO "Screenshot selected area" \
+    --field="<b>System Controls</b>":LBL "" \
+    --field="Super + C":RO "Change wallpaper" \
+    --field="Super + M":RO "Exit Hyprland" \
+    --field="Volume Keys":RO "Adjust volume" \
+    --field="Brightness Keys":RO "Adjust screen brightness" \
+    --field="Media Keys":RO "Control media playback" \
+    --button="Close":0

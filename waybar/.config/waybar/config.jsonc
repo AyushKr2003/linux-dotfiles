@@ -86,4 +86,10 @@
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "tooltip": false
   },
+  "custom/shortcuts": {
+        "format": "󰌌",
+        "tooltip": "Show keyboard shortcuts",
+        "on-click": "~/.config/custom-scripts/show-shortcuts.sh",
+        "on-click-right": "~/.config/custom-scripts/show-shortcuts.sh"
+    }
 }

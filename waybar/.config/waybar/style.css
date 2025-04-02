@@ -184,4 +184,8 @@ border-radius: 20px;
   border-style: hidden;
 }
 
-
+#custom-shortcuts {
+    color: @mauve;
+    padding: 0 10px;
+    font-size: 16px;
+}

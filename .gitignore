@@ -1,0 +1,44 @@
+# Ignore background/current folder
+background/current/
+
+# Ignore common backup files
+*~
+*.bak
+*.swp
+*.tmp
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore compiled files
+*.o
+*.so
+*.pyc
+__pycache__/
+
+# Ignore package manager directories
+node_modules/
+.npm/
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore editor/IDE specific files
+.idea/
+.vscode/
+*.sublime-*
+.project
+.settings/
+
+# Ignore user-specific files that might contain sensitive information
+.env
+.env.local
+*.pem
+*.key
