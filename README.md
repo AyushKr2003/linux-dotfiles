@@ -37,7 +37,7 @@ A carefully crafted collection of dotfiles for Arch-based Linux distributions fe
   </tr>
   <tr>
     <td><img src="./screenshots/neovim.png" alt="Neovim" width="400"/></td>
-    <td><img src="./screenshots/grub.png" alt="GRUB Theme" width="400"/></td>
+    <td><img src="./screenshots/grub.jpg" alt="GRUB Theme" width="400"/></td>
   </tr>
 </table>
 </div>
