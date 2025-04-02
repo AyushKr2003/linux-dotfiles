@@ -1,6 +1,6 @@
 {
   "position": "top",
-  "modules-left": ["hyprland/workspaces","hyprland/window"],
+  "modules-left": ["custom/launcher", "hyprland/workspaces","hyprland/window"],
   "modules-center": ["clock", "custom/weather" ],
   "modules-right": ["tray", "pulseaudio", "battery", "cpu", "memory", "disk","custom/exit"],
   "clock": {
@@ -80,5 +80,10 @@
     "on-click": "~/.config/custom-scripts/wlogout.sh",
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
+  },
+  "custom/launcher": {
+    "format":"    ",
+    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
+    "tooltip": false
   },
 }
