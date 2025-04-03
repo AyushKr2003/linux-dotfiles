@@ -1,5 +1,5 @@
 # Ignore background/current folder
-background/current/
+background/.config/background/current
 
 # Ignore common backup files
 *~
