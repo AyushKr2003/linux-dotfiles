@@ -11,6 +11,7 @@ if true then return {} end
 return {
   -- add catppuccin colorscheme
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
@@ -18,7 +19,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "catppuccin",
     },
   },
 

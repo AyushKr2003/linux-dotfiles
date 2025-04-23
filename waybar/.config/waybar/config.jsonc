@@ -6,12 +6,13 @@
     "hyprland/window"
   ],
   "modules-center": [
-    "clock",
-    "custom/weather"
+   "custom/weather", 
+    "clock"
   ],
   "modules-right": [
     "tray",
     "pulseaudio",
+    "backlight",
     "battery",
     "custom/shortcuts",
     "cpu",
@@ -20,7 +21,7 @@
     "custom/exit"
   ],
   "clock": {
-    "format": "<span foreground='#74c7ec'>   </span>{:%a %d %H:%M}",
+    "format": "<span foreground='#74c7ec'>   </span>{:%a %d | %I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "hyprland/window": {
@@ -74,20 +75,25 @@
       "bluetooth"
     ]
   },
+
+  "backlight": {
+    "format": "{icon} {percent: >3}%",
+    "format-icons": [""],
+  }, 
   // CPU
   "cpu": {
-    "format": " C {usage}% ",
+    "format": " C {usage}%",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
   // Memory
   "memory": {
-    "format": " M {}% ",
+    "format": "/  M {}%",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
   // Harddisc space used
   "disk": {
     "interval": 30,
-    "format": " D {percentage_used}% ",
+    "format": "/  D {percentage_used}% ",
     "path": "/",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
@@ -100,7 +106,7 @@
   },
   "custom/exit": {
     "format": "  ",
-    "on-click": "~/.config/custom-scripts/wlogout.sh",
+    "on-click": " exec wlogout -c 2 -r 3 -p layer-shell",
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
   },

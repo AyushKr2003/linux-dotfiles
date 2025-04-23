@@ -46,5 +46,5 @@ alias untar 'tar -zxvf '
 alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
 alias fastfetch 'fastfetch -c ~/.config/fastfetch/small-box.jsonc'
-alias vi nvim
 alias yay paru
+alias vi vim

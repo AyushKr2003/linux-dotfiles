@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory configurations
-wallpaper_folder="$HOME/.config/background"
+wallpaper_folder="$HOME/.config/background/"
 current_dir="$wallpaper_folder/current"
 
 # Ensure directories exist
@@ -95,3 +95,4 @@ convert "$output_image" -blur 0x8 "$output_blur"
 rm "$temp_image"
 
 echo ":: Wallpaper set and processed successfully!"
+
