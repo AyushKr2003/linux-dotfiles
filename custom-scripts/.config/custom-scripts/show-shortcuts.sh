@@ -30,19 +30,21 @@ yad --title="Hyprland Keyboard Shortcuts" \
     "Alt + Tab                      →       Cycle through windows" \
     " " \
     "<b>APPLICATIONS</b>" \
-    "Super + D                      →       Launch Wofi (app launcher)" \
+    "Super + D                      →       Launch Rofi (app launcher)" \
     "Super + SHIFT + D              →       Launch nwg-drawer (app grid)" \
     "Super + N                      →       Open file manager" \
     "Super + O                      →       Launch Brave browser" \
     "Super + Z                      →       Launch Zen browser" \
     "Super + T                      →       Open floating terminal with system info" \
-    "Super + V                      →       Open clipboard manager" \
+    "Super + V                      →       Open clipboard history" \
+    "Super + SHIFT + V              →       Clear clipboard history" \
     "Super + L                      →       Lock screen with hyprlock" \
     "Super + SHIFT + E              →       Open wlogout menu" \
     "Print                          →       Screenshot selected area" \
     " " \
     "<b>SYSTEM CONTROLS</b>" \
-    "Super + C                      →       Change wallpaper" \
+    "Super + C                      →       Change wallpaper randomly" \
+    "Super + SHIFT + C              →       Open wallpaper selector" \
     "Super + M                      →       Exit Hyprland" \
     "Volume Keys                    →       Adjust volume" \
     "Brightness Keys                →       Adjust screen brightness" \
