@@ -25,12 +25,12 @@ install_packages() {
   PACKAGES=(
     "hyprland" 
     "waybar" 
-    "alacritty" 
     "kitty" 
     "fish" 
     "starship" 
     "neovim" 
-    "wofi" 
+    "rofi" 
+    "nwg-drawer"
     "wlogout" 
     "stow"
     "git"
@@ -38,6 +38,15 @@ install_packages() {
     "polkit-gnome"
     "pipewire"
     "wireplumber"
+    "swww"
+    "grim"
+    "slurp"
+    "swappy"
+    "cliphist"
+    "wl-clipboard"
+    "imagemagick"
+    "nautilus"
+    "brave-browser"
   )
   
   # Check if yay is installed, if not install it
@@ -77,16 +86,16 @@ deploy_configs() {
   
   # List of directories to stow
   CONFIGS=(
-    "alacritty"
+    "custom-scripts"
     "fish"
     "hypr"
     "hyprlock"
     "kitty"
     "nvim"
+    "rofi"
     "starship"
     "waybar"
     "wlogout"
-    "wofi"
   )
   
   # Backup existing configs and deploy new ones
@@ -106,12 +115,25 @@ deploy_configs() {
   echo -e "${BLUE}Backup of previous configurations saved to: $BACKUP_DIR${NC}"
 }
 
+# Function to create necessary directories
+create_directories() {
+  echo -e "${YELLOW}Creating necessary directories...${NC}"
+  
+  # Create background directories
+  mkdir -p "$HOME/.config/background/current"
+  
+  echo -e "${GREEN}Directories created successfully!${NC}"
+}
+
 # Main installation process
 main() {
   echo -e "${YELLOW}Starting installation process...${NC}"
   
   # Install required packages
   install_packages
+  
+  # Create necessary directories
+  create_directories
   
   # Deploy configurations
   deploy_configs

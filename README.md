@@ -26,6 +26,8 @@ A carefully crafted collection of dotfiles for Arch-based Linux distributions fe
 - **Catppuccin Theming** - Consistent Mocha color scheme across all applications
 - **Custom GRUB Theme** - Stylish boot experience with matching aesthetics
 - **Modular Configuration** - Easy to adopt partially or completely
+- **Wallpaper Management** - Tools for selecting and managing wallpapers
+- **Clipboard History** - Easily access and manage clipboard contents
 
 ## 🖼️ Gallery
 
@@ -48,14 +50,17 @@ A carefully crafted collection of dotfiles for Arch-based Linux distributions fe
 |----------|-------------|-------------|
 | **Window Manager** | [Hyprland](https://hyprland.org/) | Dynamic tiling Wayland compositor |
 | **Status Bar** | [Waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar |
-| **Terminal** | [Alacritty](https://alacritty.org/), [Kitty](https://sw.kovidgoyal.net/kitty/) | GPU-accelerated terminal emulators |
+| **Terminal** | [Kitty](https://sw.kovidgoyal.net/kitty/) | GPU-accelerated terminal emulator |
 | **Shell** | [Fish](https://fishshell.com/) | User-friendly command line shell |
 | **Prompt** | [Starship](https://starship.rs/) | Minimal, blazing-fast shell prompt |
 | **Editor** | [Neovim](https://neovim.io/) | Hyperextensible Vim-based text editor |
-| **App Launcher** | [Wofi](https://hg.sr.ht/~scoopta/wofi) | Wayland native application launcher |
+| **App Launcher** | [Rofi](https://github.com/davatorium/rofi) | Application launcher with custom themes |
 | **App Grid** | [nwg-drawer](https://github.com/nwg-piotr/nwg-drawer) | GTK-based application grid for Wayland |
 | **Session Management** | [wlogout](https://github.com/ArtsyMacaw/wlogout) | Wayland logout menu |
 | **Screen Locking** | [hyprlock](https://github.com/hyprwm/hyprlock) | Hyprland-native screen locker |
+| **Clipboard Manager** | [cliphist](https://github.com/sentriz/cliphist) | Wayland clipboard manager |
+| **Wallpaper Manager** | [swww](https://github.com/Horus645/swww) | Efficient animated wallpaper daemon |
+| **Screenshot Tool** | [grim](https://github.com/emersion/grim) + [slurp](https://github.com/emersion/slurp) | Screenshot utilities for Wayland |
 | **Boot Loader** | [GRUB](https://www.gnu.org/software/grub/) | With custom Catppuccin Mocha theme |
 
 ## 📦 Installation
@@ -76,28 +81,28 @@ git clone https://github.com/ayushkr2003/linux-dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 # Install dependencies
-./custom-scripts/install-dependencies.sh
+./install_scripts/install-dependencies.sh
 
 # Deploy configurations (using GNU Stow)
-./custom-scripts/deploy.sh
+./install_scripts/deploy.sh
 ```
 
 ## 🗂️ Directory Structure
 
 ```
 linux-dotfiles/
-├── alacritty/         # Alacritty terminal configuration
 ├── custom-scripts/    # Utility and installation scripts
 ├── fish/              # Fish shell configuration and functions
 ├── grub_theme/        # Custom GRUB bootloader theme
 ├── hypr/              # Hyprland window manager config
 ├── hyprlock/          # Screen locking configuration
+├── install_scripts/   # Installation and deployment scripts
 ├── kitty/             # Kitty terminal configuration
 ├── nvim/              # Neovim text editor configuration
+├── rofi/              # Rofi application launcher themes
 ├── starship/          # Starship prompt configuration
 ├── waybar/            # Status bar configuration
 ├── wlogout/           # Logout menu configuration
-├── wofi/              # Application launcher configuration
 └── README.md          # This documentation
 ```
 
@@ -135,13 +140,14 @@ linux-dotfiles/
 
 | Shortcut | Action |
 |----------|--------|
-| `Super + D` | Launch Wofi (app launcher) |
+| `Super + D` | Launch Rofi (app launcher) |
 | `Super + Shift + D` | Launch nwg-drawer (app grid) |
 | `Super + N` | Open file manager |
 | `Super + O` | Launch Brave browser |
 | `Super + Z` | Launch Zen browser |
 | `Super + T` | Open floating terminal with system info |
-| `Super + V` | Open clipboard manager |
+| `Super + V` | Open clipboard history |
+| `Super + Shift + V` | Clear clipboard history |
 | `Super + L` | Lock screen with hyprlock |
 | `Super + Shift + E` | Open wlogout menu |
 | `Print` | Screenshot selected area |
@@ -150,7 +156,8 @@ linux-dotfiles/
 
 | Shortcut | Action |
 |----------|--------|
-| `Super + C` | Change wallpaper |
+| `Super + C` | Change wallpaper randomly |
+| `Super + Shift + C` | Open wallpaper selector |
 | `Super + M` | Exit Hyprland |
 | `Volume Keys` | Adjust volume |
 | `Brightness Keys` | Adjust screen brightness |
@@ -158,20 +165,29 @@ linux-dotfiles/
 
 ## 🎨 Customization
 
-### Changing Theme Colors
+### Changing Wallpapers
 
-Edit the color variables in each application's configuration file to match your preferred color scheme.
+This configuration includes two ways to change your wallpaper:
+
+1. **Random Wallpaper**: Press `Super + C` to randomly select a wallpaper from your collection.
+2. **Wallpaper Selector**: Press `Super + Shift + C` to open a visual selector to choose your wallpaper.
+
+Wallpapers are stored in `~/.config/background/` directory. The system automatically creates blurred versions for lock screens and other UI elements.
+
+### Clipboard Management
+
+The configuration includes a clipboard history manager:
+
+- Press `Super + V` to view and select from clipboard history
+- Press `Super + Shift + V` to clear clipboard history
 
 ### Terminal Selection
 
-This configuration includes both Alacritty and Kitty terminals. You can set your preferred default:
+This configuration uses Kitty as the default terminal. You can customize it by editing:
 
 ```bash
-# For Alacritty
-ln -sf ~/.config/alacritty/alacritty.yml ~/.config/hypr/terminal.conf
-
-# For Kitty
-ln -sf ~/.config/kitty/kitty.conf ~/.config/hypr/terminal.conf
+# Edit Kitty configuration
+nano ~/.config/kitty/kitty.conf
 ```
 
 ### GRUB Theme Installation
@@ -191,7 +207,7 @@ To update your configurations with the latest changes:
 ```bash
 cd ~/.dotfiles
 git pull
-./custom-scripts/deploy.sh
+./install_scripts/deploy.sh
 ```
 
 ## 🤝 Contributing

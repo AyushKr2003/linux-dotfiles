@@ -20,16 +20,16 @@ fi
 
 # List of directories to stow
 CONFIGS=(
-  "alacritty"
+  "custom-scripts"
   "fish"
   "hypr"
   "hyprlock"
   "kitty"
   "nvim"
+  "rofi"
   "starship"
   "waybar"
   "wlogout"
-  "wofi"
 )
 
 # Function to deploy configurations
@@ -57,9 +57,22 @@ deploy_configs() {
   echo -e "${BLUE}Backup of previous configurations saved to: $BACKUP_DIR${NC}"
 }
 
+# Function to create necessary directories
+create_directories() {
+  echo -e "${YELLOW}Creating necessary directories...${NC}"
+  
+  # Create background directories
+  mkdir -p "$HOME/.config/background/current"
+  
+  echo -e "${GREEN}Directories created successfully!${NC}"
+}
+
 # Main function
 main() {
   echo -e "${YELLOW}Starting deployment process...${NC}"
+  
+  # Create necessary directories
+  create_directories
   
   # Deploy configurations
   deploy_configs
