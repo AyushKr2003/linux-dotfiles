@@ -48,3 +48,5 @@ alias wget 'wget -c '
 alias fastfetch 'fastfetch -c ~/.config/fastfetch/small-box.jsonc'
 alias yay paru
 alias vi vim
+
+carapace _carapace | source

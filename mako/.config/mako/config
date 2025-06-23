@@ -3,7 +3,7 @@ font=monospace 10
 background-color=#11111b
 text-color=#cba6f7
 width=350
-margin=0,20,20
+margin=5,5,20
 padding=10
 border-size=1
 border-color=#cba6f7
@@ -11,6 +11,8 @@ border-radius=5
 default-timeout=10000
 group-by=summary
 icons=1
+max-icon-size=48
+icon-path=/usr/share/icons/Infinity:/usr/share/pixmaps
 
 [grouped]
 format=<b>%s</b>\n%b
