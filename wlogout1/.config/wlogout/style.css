@@ -1,4 +1,4 @@
-/* pywal-wlogout */
+/* pywal-wlogout Catppuccin theme */
 
 @define-color rosewater #f5e0dc;
 @define-color flamingo #f2cdcd;
@@ -27,76 +27,62 @@
 @define-color mantle #181825;
 @define-color crust #11111b;
 
-/* Importing pywal colors */
-
-
-
+/* Background wallpaper */
 window {
-    font-family: Fira Code Medium;
+    font-family: "Fira Code Medium";
     font-size: 16pt;
-    color: #cdd6f4;
-    /* text */
-    /* background-color: rgba(30, 30, 46, 0.185); */
+    color: @text;
     background: url("/home/shadow/.config/background/current/current.png");
     background-size: cover;
 }
 
+/* Base button style */
 button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
-    margin: 5px;
-    background-color: @overlay2;
-    animation: gradient_f 20s ease-in infinite;
-    border-radius: 20px;
-    /* Increased border radius for a more rounded look */
+    margin: 20px;
+    background-color: @crust;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.7;
+    border: none;
 }
 
+/* Active button (hover OR focus) */
 
-button:focus,
-button:hover {
-    background-color: @crust;
-    color: @foreground;
+button:focus {
+    background-color: @mantle;
+    color: @text;
     background-size: 35%;
     margin: 10px;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
+    border-radius: 20px;
     box-shadow: 0 0 20px @overlay0;
-
+    opacity: 1;
+    outline: none;
 }
 
-/* Adjust the size of the icon or content inside the button */
+/* Icon font size */
 button span {
     font-size: 50px;
-
 }
 
-
+/* Button icons */
 #lock {
     background-image: image(url("./icons/lock.png"));
 }
-
-
 #logout {
     background-image: image(url("./icons/logout.png"));
 }
-
-
 #suspend {
     background-image: image(url("./icons/sleep.png"));
 }
-
-
 #shutdown {
     background-image: image(url("./icons/power.png"));
 }
-
 #reboot {
     background-image: image(url("./icons/restart.png"));
 }
-
-
-
 #hibernate {
     background-image: image(url("./icons/hibernate.png"));
 }
