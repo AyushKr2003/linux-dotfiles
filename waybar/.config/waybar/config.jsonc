@@ -21,7 +21,7 @@
     "custom/exit"
   ],
   "clock": {
-    "format": "<span foreground='#74c7ec'>   </span>{:%a %d | %I:%M %p}",
+    "format": "<span foreground='#11111b'>   </span>{:%a %d | %I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "hyprland/window": {
@@ -32,13 +32,13 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
-    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
-    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
-    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
-    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format": "<span size='13000' foreground='#11111b'>{icon} </span> {capacity}%",
+    "format-warning": "<span size='13000' foreground='#11111b'>{icon} </span> {capacity}%",
+    "format-critical": "<span size='13000' foreground='#11111b'>{icon} </span> {capacity}%",
+    "format-charging": "<span size='13000' foreground='#11111b'> </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#11111b'> </span>{capacity}%",
+    "format-alt": "<span size='13000' foreground='#11111b'>{icon} </span> {time}",
+    "format-full": "<span size='13000' foreground='#11111b'> </span>{capacity}%",
     "format-icons": [
       "",
       "",
@@ -105,7 +105,7 @@
     "tooltip": false
   },
   "custom/exit": {
-    "format": "  ",
+    "format": "",
     "on-click": " exec wlogout -c 2 -r 3 -p layer-shell",
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
