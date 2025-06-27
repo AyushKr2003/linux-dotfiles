@@ -15,7 +15,7 @@ return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load catppuccin
   {
     "LazyVim/LazyVim",
     opts = {
@@ -137,6 +137,8 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "c",
+        "cpp",
       },
     },
   },

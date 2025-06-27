@@ -1,6 +1,18 @@
 set fish_greeting
 set -x EDITOR nvim
 
+set -gx PATH $HOME/.local/share/fnm $PATH
+fnm env --use-on-cd | source
+
+#for wineprefix for nfs2012 Game
+set -x WINEPREFIX ~/.wine-nfsmw2012
+
+function nfs2012
+    set -x WINEPREFIX ~/.wine-nfsmw2012
+    set -x DXVK_HUD 1
+    prime-run wine /run/media/shadow/New\ Volume/Games/Need\ for\ Speed\ Most\ Wanted/NFS13.exe
+end
+
 if status is-interactive
     source ("/usr/bin/starship" init fish --print-full-init | psub)
     # Commands to run in interactive sessions can go here

@@ -9,15 +9,18 @@
 window#waybar {
     transition-property: background-color;
     transition-duration: 0.1s;
+    border-radius: 8;
 }
 
 #workspaces button {
+    font-size: 20px;
     border-radius: 10px;
 }
 
 #workspaces button.active {
-    background-color: @mauve;
-    color: @crust;   
+    font-size: 20px;
+   /* background-color: @mauve;*/
+    color: @mauve;   
 }
 
 #window {
@@ -39,78 +42,78 @@ window#waybar {
 #idle_inhibitor,
 #custom-vpn,
 #custom-exit {
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 6px;
+    margin-bottom: 6px;
     margin-left: 4px;
     margin-right: 4px;
     padding-left: 6px;
     padding-right: 6px;
-    border-radius: 10px; 
-    color: #ffffff; 
+    border-radius: 10px;
 }
 
 
 #clock {
     background-color: @sapphire;
-    color: #11111b; /* dark text for bright background */
+    color: @crust;
 }
 
 #pulseaudio {
     background-color: @blue;
-    color: #11111b;
+    color: @crust;
 }
 
 #backlight {
     background-color: @yellow;
-    color: #11111b;
+    color: @crust;
 }
 
 #battery {
     background-color: @green;
-    color: #11111b;
+    color: @crust;
 }
 
 #network {
     background-color: @yellow;
-    color: #11111b;
+    color: @crust;
 }
 
 #idle_inhibitor {
     background-color: #7cb342;
-    color: #11111b;
+    color: @crust;
 }
 
 #idle_inhibitor.activated {
     background-color: @red;
-    color: #ffffff;
+    color: @white;
 }
 
 #custom-shortcuts {
     padding-left: 0px;
     padding-right: 0px;
     background-color: @flamingo;
-    color: #11111b;
+    color: @crust;
 }
 
 #custom-vpn {
     background-color: @lavender;
-    color: #11111b;
+    color: @crust;
 }
 
 #custom-weather {
-    background-color: @text;
-    color: #11111b;
+    background-color: @maroon;
+    color: @crust;
 }
 
 #custom-exit {
     padding-left: 10px;
     padding-right: 14px;
+    margin-right: 10px;
     background-color: @red;
-    color: #11111b;
+    color: @crust;
 }
 
 #custom-launcher {
-    color: #11111b;
+    color: @crust;
     font-size: 20px;
     background-image: url("/home/shadow/.config/waybar/fastfetch_arch_icon.png");
     background-position: center;
@@ -122,41 +125,49 @@ window#waybar {
 #cpu,
 #memory,
 #disk {
-    padding: 4px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: @white; 
     font-size: 14px;
-    color: #ffffff;
+    
+
 }
 #cpu {
-    border-bottom: 2px solid @overlay2;
+    margin-left: 4px;
+    border-bottom: 1px solid @white;
     border-bottom-left-radius: 10px;
 
-    border-top: 2px solid @overlay2;
+    border-top: 1px solid @white;
     border-top-left-radius: 10px;
 
-    border-left: 2px solid @overlay2;
+    border-left: 1px solid @white;
 }
 #memory {
-    border-bottom: 2px solid @overlay2;
+    border-bottom: 1px solid @white;
 
-    border-top: 2px solid @overlay2;
+    border-top: 1px solid @white;
 }
 #disk {
-    border-bottom: 2px solid @overlay2;
+    margin-right: 4px;
+    border-bottom: 1px solid @white;
     border-bottom-right-radius: 10px;
 
-    border-top: 2px solid @overlay2;
+    border-top: 1px solid @white;
     border-top-right-radius: 10px;
 
-    border-right: 2px solid @overlay2;
+    border-right: 1px solid @white;
 }
 
 
-
-#cpu,
-#memory,
-#disk{
-    padding: 2px 4px;     /* Reduced vertical/horizontal padding */
-    font-size: 10px;      /* Smaller font size */
-    margin-top: 3px;      /* Optional: tighten spacing */
-    margin-bottom: 3px;
+#tray{
+    padding: 2px 4px;       
+    margin-top: 6px;      
+    margin-bottom: 6px;
+    margin-right: 4px;
+    margin-left: 4px;
+    border: 1px solid @white;
+    border-radius: 10px;
 }
+
